@@ -49,7 +49,8 @@ namespace BateryController.Model
         }
         public string EnviarMensaje(string msj) {
             if (!Arduino.IsOpen) {
-                return "Conexion Cerrada";
+                Abrirconexion();
+                return "Abriendo Comunicacion Arduino";
             }
             Arduino.Write(msj);
             return "Enviado";
