@@ -14,11 +14,13 @@ namespace BateryController.Model
         public int Baud { get; set; }
         public string Mensaje { get; set; }
         System.IO.Ports.SerialPort Arduino = new SerialPort();
+        public bool estado  {get;set;}
 
         public ArduinoConfig()
         {
             Com = "COM3";
             Baud = 9600;
+            estado = false;
         }
 
 
@@ -27,6 +29,7 @@ namespace BateryController.Model
             if (Arduino.IsOpen)
             {
                 Arduino.Close();
+                estado = false;
             }
         }
 
@@ -38,6 +41,7 @@ namespace BateryController.Model
                     Arduino.PortName = Com;
                     Arduino.BaudRate = Baud;
                     Arduino.Open();
+                    estado= true;
                 }
                 Console.WriteLine("Conexion ya abierta");
                     
@@ -45,6 +49,7 @@ namespace BateryController.Model
             } catch (Exception e) {
                 Console.WriteLine(e.Message);
                 Console.WriteLine("Error intentando Establecer Conexión");
+                estado = false;
             }
         }
         public string EnviarMensaje(string msj) {
@@ -53,7 +58,9 @@ namespace BateryController.Model
                 return "Abriendo Comunicacion Arduino";
             }
             Arduino.Write(msj);
+            estado = true;
             return "Enviado";
+          
         }
     }
 }

@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.lblEstado = new System.Windows.Forms.Label();
             this.lblPorcentaje = new System.Windows.Forms.Label();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.lblMensajes = new System.Windows.Forms.Label();
@@ -41,24 +40,18 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.modoJuegoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.modoAutomaticoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.contextMenuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // lblEstado
-            // 
-            this.lblEstado.AutoSize = true;
-            this.lblEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEstado.Location = new System.Drawing.Point(12, 9);
-            this.lblEstado.Name = "lblEstado";
-            this.lblEstado.Size = new System.Drawing.Size(74, 24);
-            this.lblEstado.TabIndex = 0;
-            this.lblEstado.Text = "Estado";
             // 
             // lblPorcentaje
             // 
             this.lblPorcentaje.AutoSize = true;
+            this.lblPorcentaje.BackColor = System.Drawing.Color.Black;
             this.lblPorcentaje.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPorcentaje.Location = new System.Drawing.Point(290, 74);
+            this.lblPorcentaje.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblPorcentaje.Location = new System.Drawing.Point(12, 179);
             this.lblPorcentaje.Name = "lblPorcentaje";
             this.lblPorcentaje.Size = new System.Drawing.Size(95, 20);
             this.lblPorcentaje.TabIndex = 1;
@@ -66,7 +59,7 @@
             // 
             // progressBar1
             // 
-            this.progressBar1.Location = new System.Drawing.Point(16, 36);
+            this.progressBar1.Location = new System.Drawing.Point(9, 202);
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(369, 35);
             this.progressBar1.TabIndex = 2;
@@ -74,16 +67,18 @@
             // lblMensajes
             // 
             this.lblMensajes.AutoSize = true;
+            this.lblMensajes.BackColor = System.Drawing.Color.Black;
             this.lblMensajes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMensajes.Location = new System.Drawing.Point(12, 186);
+            this.lblMensajes.ForeColor = System.Drawing.Color.LawnGreen;
+            this.lblMensajes.Location = new System.Drawing.Point(276, 8);
             this.lblMensajes.Name = "lblMensajes";
-            this.lblMensajes.Size = new System.Drawing.Size(321, 20);
+            this.lblMensajes.Size = new System.Drawing.Size(69, 20);
             this.lblMensajes.TabIndex = 3;
-            this.lblMensajes.Text = "El mensaje que estará realizando el proceso";
+            this.lblMensajes.Text = "Mensaje";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(294, 125);
+            this.button1.Location = new System.Drawing.Point(249, 111);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(96, 32);
             this.button1.TabIndex = 4;
@@ -93,18 +88,20 @@
             // 
             // timer1
             // 
-            this.timer1.Interval = 120000;
+            this.timer1.Interval = 5000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // checkJuego
             // 
             this.checkJuego.AutoSize = true;
-            this.checkJuego.Location = new System.Drawing.Point(16, 94);
+            this.checkJuego.BackColor = System.Drawing.Color.Black;
+            this.checkJuego.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.checkJuego.Location = new System.Drawing.Point(9, 12);
             this.checkJuego.Name = "checkJuego";
             this.checkJuego.Size = new System.Drawing.Size(85, 17);
             this.checkJuego.TabIndex = 5;
             this.checkJuego.Text = "Modo Juego";
-            this.checkJuego.UseVisualStyleBackColor = true;
+            this.checkJuego.UseVisualStyleBackColor = false;
             this.checkJuego.CheckedChanged += new System.EventHandler(this.checkJuego_CheckedChanged);
             // 
             // notifyIcon1
@@ -138,31 +135,39 @@
             this.modoAutomaticoToolStripMenuItem.Text = "Modo Automatico";
             this.modoAutomaticoToolStripMenuItem.Click += new System.EventHandler(this.modoAutomaticoToolStripMenuItem_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(-4, -3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(382, 240);
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(466, 354);
+            this.ClientSize = new System.Drawing.Size(383, 240);
             this.Controls.Add(this.checkJuego);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.lblMensajes);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.lblPorcentaje);
-            this.Controls.Add(this.lblEstado);
+            this.Controls.Add(this.pictureBox1);
             this.Name = "Form1";
             this.Text = "Form1";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.Resize += new System.EventHandler(this.Form1_Resize);
             this.contextMenuStrip1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label lblEstado;
         private System.Windows.Forms.Label lblPorcentaje;
         private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.Label lblMensajes;
@@ -173,6 +178,7 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem modoJuegoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem modoAutomaticoToolStripMenuItem;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 
