@@ -51,7 +51,7 @@
             this.lblPorcentaje.BackColor = System.Drawing.Color.Black;
             this.lblPorcentaje.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPorcentaje.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblPorcentaje.Location = new System.Drawing.Point(12, 179);
+            this.lblPorcentaje.Location = new System.Drawing.Point(143, 179);
             this.lblPorcentaje.Name = "lblPorcentaje";
             this.lblPorcentaje.Size = new System.Drawing.Size(95, 20);
             this.lblPorcentaje.TabIndex = 1;
@@ -70,7 +70,7 @@
             this.lblMensajes.BackColor = System.Drawing.Color.Black;
             this.lblMensajes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMensajes.ForeColor = System.Drawing.Color.LawnGreen;
-            this.lblMensajes.Location = new System.Drawing.Point(276, 8);
+            this.lblMensajes.Location = new System.Drawing.Point(169, 8);
             this.lblMensajes.Name = "lblMensajes";
             this.lblMensajes.Size = new System.Drawing.Size(69, 20);
             this.lblMensajes.TabIndex = 3;
@@ -148,15 +148,17 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(383, 240);
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ClientSize = new System.Drawing.Size(378, 233);
             this.Controls.Add(this.checkJuego);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.lblMensajes);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.lblPorcentaje);
             this.Controls.Add(this.pictureBox1);
+            this.MaximizeBox = false;
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Bateria";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.Resize += new System.EventHandler(this.Form1_Resize);
